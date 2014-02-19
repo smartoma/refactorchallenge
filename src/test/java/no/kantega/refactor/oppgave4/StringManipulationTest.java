@@ -1,16 +1,17 @@
-package no.kantega.refactor.oppgave1;
+package no.kantega.refactor.oppgave4;
 
+import no.kantega.refactor.SuccessAwareTest;
 import org.junit.Test;
 
-import static no.kantega.refactor.oppgave1.StringManipulation.encodeUrl;
-import static no.kantega.refactor.oppgave1.StringManipulation.escapeHtml;
-import static no.kantega.refactor.oppgave1.StringManipulation.removeSpaces;
-import static no.kantega.refactor.oppgave1.StringManipulation.trimTrailingAndPrefixingSpaces;
+import static no.kantega.refactor.oppgave4.StringManipulation.encodeUrl;
+import static no.kantega.refactor.oppgave4.StringManipulation.escapeHtml;
+import static no.kantega.refactor.oppgave4.StringManipulation.removeSpaces;
+import static no.kantega.refactor.oppgave4.StringManipulation.trimTrailingAndPrefixingSpaces;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
 
-public class StringManipulationTest {
+public class StringManipulationTest extends SuccessAwareTest {
 
     @Test
     public void checkCorrectness() throws NoSuchFieldException {
