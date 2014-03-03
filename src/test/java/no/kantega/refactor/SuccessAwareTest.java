@@ -11,7 +11,7 @@ public abstract class SuccessAwareTest {
     public TestRule rule = new TestWatcher() {
         @Override
         protected void succeeded(final Description description) {
-            System.err.println("This was big success... " + description.getClassName());
+            System.err.println(description.getClassName());
         }
     };
 }
