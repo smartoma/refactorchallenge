@@ -4,7 +4,7 @@ public class Constants {
 
 
     public static long secondsInYearWithMagicNumbers() {
-        //Innføre 'public static final int' konstants som heter:
+        // Oppgaven her er: Innføre 'public static final int' konstants som heter:
         // SECONDS_IN_MINUTE
         // MINUTES_IN_HOUR
         // HOURS_IN_DAY

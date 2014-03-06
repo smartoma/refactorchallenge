@@ -2,7 +2,7 @@ package no.kantega.refactor.oppgave2;
 
 public class Inlining {
 
-    // 1. Dette skal være en lokal variabel i metod.
+    // 1. Dette skal være en lokal variabel i metoden getPriceAsString.
     private String reduceMyScopeAndInline;
 
     public int getPriceAsString(final Inlining collaborator) {
@@ -10,7 +10,8 @@ public class Inlining {
 
         collaborator.dontTouchMe();
 
-        // 2. Dette skal bruke priceQuery-metod kall istedenfor temp variabel.
+        // 2. Dette skal bruke collaborator.priceQuery() kall istedenfor temp variabel.
+        // Bruk inlining for å oppnå det.
         return Integer.valueOf(reduceMyScopeAndInline);
     }
 

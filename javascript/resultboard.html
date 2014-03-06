@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type='text/javascript' src="jquery.tablesorter.min.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-offset-4">
+            <h2><strong>Refactor challenge resultboard</strong></h2>
+        </div>
+    </div>
+    <div class="row">
+        <table id="resultTable" class="tablesorter table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Points</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var dataRef = new Firebase('https://refactorchallenge.firebaseio.com/test/');
+    $(document).ready(function() {
+        dataRef.on('value', function(snapshot) {
+            snapshot.forEach(function(data) {
+                var id = data.val().id;
+                var name = data.val().name
+                writeData(id, name, pointsForId(id, snapshot));
+                $("#resultTable").tablesorter( {sortList: [[1,1]]} );
+            });
+        });
+    });
+
+    function pointsForId(id, snapshot) {
+        var Map = {};
+        snapshot.forEach(function(data) {
+            var element = data.val();
+            if (element.id === id) {
+                Map[element.test] = true;
+            }
+        });
+        var points = 0;
+        for(var e in Map)
+            if(Map.hasOwnProperty(e)) {
+                points++;
+            }
+        return points;
+    }
+
+    function writeData(id, name, points) {
+        var table = $("#resultTable tbody");
+        var row = $("#resultTable #" + id);
+        if (row.length === 0) {
+            table.append(
+                    "<tr id='" + id + "'>" +
+                    "<td>" + name + " </td>" +
+                    "<td id='points'>" + points + " </td>" +
+                    "</tr>");
+        } else {
+            row.find("#points").html(points);
+        }
+    }
+
+</script>
+</body>
+</html>

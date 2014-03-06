@@ -13,7 +13,6 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.powermock.reflect.internal.WhiteboxImpl.getInternalState;
 
-@SuppressWarnings("LocalCanBeFinal")
 public class InliningTest extends SuccessAwareTest {
 
     @Mock
@@ -23,7 +22,6 @@ public class InliningTest extends SuccessAwareTest {
     public void setup() {
         initMocks(this);
     }
-
 
     @Test
     public void checkCorrectnessOf_LocalScopeVariable_AndQueryInlining() {
@@ -40,5 +38,6 @@ public class InliningTest extends SuccessAwareTest {
         order.verify(mockedCollaborator).dontTouchMe();
         order.verify(mockedCollaborator).priceQuery();
     }
+
 
 }

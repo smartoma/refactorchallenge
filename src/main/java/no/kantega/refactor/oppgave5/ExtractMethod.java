@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-@SuppressWarnings({"LocalCanBeFinal", "FieldMayBeFinal"})
 public class ExtractMethod {
 
     private List<Order> orders = Arrays.asList(new Order(10.0), new Order(5.0), new Order(1.0));
@@ -23,7 +22,6 @@ public class ExtractMethod {
         System.out.println ("***************************");
         System.out.println ("***** This is banner ******");
         System.out.println ("***************************");
-
 
         // 3. Erstatte løkke med metod: 'calculate(totalAmount)'
         // Tips: For å bli kvitt av den 1. parameteren 'iterator'

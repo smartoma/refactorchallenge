@@ -11,10 +11,13 @@ repositories {
 
 task start << {
     def username = System.console().readLine '\n Hva er navnet ditt? '
-    new File(".user").withWriter{ it << username + ":" + new BigInteger(130, new SecureRandom()).toString(32)}
+    def separator = File.separator
+    new File("src" + separator + "main" + separator + "resources" + separator + ".user").
+            withWriter { it << username + ":" + new BigInteger(130, new SecureRandom()).toString(32) }
 }
 
 dependencies {
+    compile group: 'com.firebase', name: 'firebase-client', version: '1.0.11'
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile group: 'org.apache.commons', name: 'commons-lang3', version: '3.2.1'
     testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '1.5.4'

@@ -2,7 +2,10 @@ package no.kantega.refactor.oppgave4;
 
 public class StringManipulation {
 
-    public static String escapeHtml = "&lt;H1&gt;Escape me!&lt;/H1&gt;";
+    // Se på testklasse for finne ut hva vi prøver å oppnå her!
+    // Tips: 'String manipulation'-plugin hjelper sikkert mye!
+
+    public static String escapeHtml = "<H1>Escape me!</H1>";
 
     public static String encodeUrl = "http://www.kantega.no?param=I am not encoded";
 
