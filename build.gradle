@@ -12,8 +12,10 @@ repositories {
 task start << {
     def username = System.console().readLine '\n Hva er navnet ditt? '
     def separator = File.separator
-    new File("src" + separator + "main" + separator + "resources" + separator + ".user").
-            withWriter { it << username + ":" + new BigInteger(130, new SecureRandom()).toString(32) }
+    def folder = new File("src" + separator + "main" + separator + "resources")
+	folder.mkdirs()
+	new File(folder, ".user")
+	    .withWriter { it << username + ":" + new BigInteger(130, new SecureRandom()).toString(32) }
 }
 
 dependencies {
