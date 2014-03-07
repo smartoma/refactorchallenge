@@ -4,7 +4,7 @@ public class ChangeSignature {
 
     // Endre signaturen til metoden slik at den får et nytt
     // String parameter 'firstName'. Pass på at kallende objekt
-    // på linje 22 (changeSignature.getName) endres også
+    // på linje 23 (changeSignature.addParameter) endres også
     // slik at den bruker lokal variabel 'firstName' som en
     // argument. Men du har ikke lov til å endre Collaborator manuelt!!
     // Tips: 'default value' i dialogboksen 'change signature' er din venn...

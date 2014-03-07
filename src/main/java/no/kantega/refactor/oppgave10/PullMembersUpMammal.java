@@ -30,7 +30,6 @@ class Cat extends PullMembersUpMammal {
     private int numberOfLegs = 4;
 
     // 2. Refaktorer dette til parent-klasse.
-    // Tips: bruk 'pull memebers up'.
     public String run() {
         return "I am running with " + numberOfLegs + " legs!";
     }

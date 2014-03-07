@@ -18,19 +18,19 @@ public class ExtractMethod {
         Iterator<Order> iterator = orders.iterator();
         double totalAmount = 0.0;
 
-        // 1. Erstatte 3 linjer med metod 'printBanner()'
+        // Oppgave 1. Erstatte 3 linjer med metod 'printBanner()'
         System.out.println ("***************************");
         System.out.println ("***** This is banner ******");
         System.out.println ("***************************");
 
-        // 3. Erstatte løkke med metod: 'calculate(totalAmount)'
-        // Tips: For å bli kvitt av den 1. parameteren 'iterator'
+        // Oppgave 3. Erstatte løkke med metod: 'calculate(totalAmount)'
+        // Tips: For å bli kvitt av den første metod-parameteren 'iterator'
         // er det lurt å bruke inlining (2 ganger)...
         while (iterator.hasNext()) {
             totalAmount += iterator.next().getAmount();
         }
 
-        //2. Erstatte 2 linjer med metod 'printDetails(totalAmount)'
+        // Oppgave 2. Erstatte 2 linjer med metod 'printDetails(totalAmount)'
         System.out.println ("name: " + name);
         System.out.println ("amount: " + totalAmount);
     }

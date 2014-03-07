@@ -15,41 +15,38 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static java.lang.Boolean.TRUE;
+import static java.lang.Thread.sleep;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.Files.readAllLines;
 
 public abstract class SuccessAwareTest {
 
+    private static final int HALF_SECOND = 500;
+
     private boolean isReady;
 
-    private Firebase fb = new Firebase("https://refactorchallenge.firebaseio.com/test/");
+    private Firebase firebase = new Firebase("https://refactorchallenge.firebaseio.com/test/");
 
     @Rule
     public TestRule rule = new TestWatcher() {
-
         @Override
         protected void succeeded(final Description description) {
-            sendData(fb, description);
+            sendData(firebase, description);
             waitUntilReady();
-        }
-
-        @Override
-        protected void finished(Description description) {
         }
     };
 
     private void sendData(Firebase fb, Description description) {
         String usernameAndId = readUsernameAndId();
-        Map<String, Object> toSet = new HashMap<String, Object>();
-        toSet.put("test", description.getClassName());
-        toSet.put("id", usernameAndId.split(":")[1]);
-        toSet.put("name", usernameAndId.split(":")[0]);
-        fb.push().setValue(toSet, notifyCompletion());
+        Map<String, Object> dataSet = new HashMap<String, Object>();
+        dataSet.put("test", description.getClassName());
+        dataSet.put("id", usernameAndId.split(":")[1]);
+        dataSet.put("name", usernameAndId.split(":")[0]);
+        fb.push().setValue(dataSet, notifyCompletion());
     }
 
     private Firebase.CompletionListener notifyCompletion() {
         return new Firebase.CompletionListener() {
-            @Override
             public void onComplete(FirebaseError firebaseError, Firebase firebase) {
                 isReady = TRUE;
             }
@@ -59,7 +56,7 @@ public abstract class SuccessAwareTest {
     private void waitUntilReady() {
         while (!isReady) {
             try {
-                Thread.sleep(500);
+                sleep(HALF_SECOND);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

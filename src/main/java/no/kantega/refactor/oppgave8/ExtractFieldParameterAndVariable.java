@@ -25,7 +25,7 @@ class Collaborator {
         ExtractFieldParameterAndVariable extractor = new ExtractFieldParameterAndVariable();
         extractor.doFineThings();
     }
-
+    // Ikke lov å endre manuelt !
     public static String getExtraMessage() {
         return "here.";
     }

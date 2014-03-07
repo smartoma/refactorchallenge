@@ -16,7 +16,7 @@ public class MoveMethod {
         // Tips: Prøv å gjennomføre dette i 3 steg:
         // 1. refaktorer til en ny metode
         // 2. flytt instansvariabler (unitPrice, totalAmount, discount) til lokal scope.
-        // 3. flytt den nye metoden (totalPrice) til riktig klasse.
+        // 3. flytt den nye metoden (totalPrice) til riktig klasse (Collaborator).
         unitPrice = collaborator.getUnitPrice();
         totalAmount = collaborator.getTotalAmount();
         discount = collaborator.getDiscount();
