@@ -7,7 +7,7 @@ public class ChangeSignature {
     // på linje 23 (changeSignature.addParameter) endres også
     // slik at den bruker lokal variabel 'firstName' som en
     // argument. Men du har ikke lov til å endre Collaborator manuelt!!
-    // Tips: 'default value' i dialogboksen 'change signature' er din venn...
+    // Tips: Dialogboksen 'change signature' er din venn...
     public String addParameterToMe(String lastName) {
         return "Hello " + lastName;
     }

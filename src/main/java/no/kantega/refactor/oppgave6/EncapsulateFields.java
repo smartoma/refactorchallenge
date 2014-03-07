@@ -2,8 +2,8 @@ package no.kantega.refactor.oppgave6;
 
 public class EncapsulateFields {
 
-    // Oppgave 1. Dette skal til private scope med public getter: getName().
-    // Oppgave 2. Collaborator skal bruke den nye metoden getName(), ikke 'fields.name'.
+    // Dette skal til private scope med public getter: getName().
+    // Collaborator skal bruke den nye metoden getName(), ikke 'fields.name'.
     // Du har ikke lov til å endre manuelt Collaborator-klasse.
     public String name = "make me private and protect with getter";
 
