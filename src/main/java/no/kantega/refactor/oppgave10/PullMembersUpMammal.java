@@ -12,7 +12,7 @@ class Horse extends PullMembersUpMammal {
     // 3. Dette skal bli 'safe deleted'. Etter at du har protected felt i parent-klasse.
     private int numberOfLegs = 4;
 
-    // 4. Dette skal bli 'safe deleted'. Etter at du har run-metode i parent-klasse.
+    // 4. Dette skal bli 'safe deleted'. Etter at du har run-metod i parent-klasse.
     public String run() {
         return "I am running with " + numberOfLegs + " legs!";
     }

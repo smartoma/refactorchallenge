@@ -8,7 +8,7 @@ public class PrimitiveObsession {
 
     //1. Erstatte int med en ny klasse i denne pakken som heter IdNumber,
     //og har konstruktor med int parameter.
-    //Tips: du må wrappe return verdien til metode...
+    //Tips: du må wrappe return verdien til metod...
     public int getId() {
         return 42;
     }

@@ -10,7 +10,7 @@ public class Inlining {
 
         collaborator.dontTouchMe();
 
-        // 2. Dette skal bruke collaborator.priceQuery() kall som et metode-parameter istedenfor temp variabel.
+        // 2. Dette skal bruke collaborator.priceQuery() kall istedenfor temp variabel.
         // Bruk inlining for å oppnå det.
         return Integer.valueOf(reduceMyScopeAndInline);
     }

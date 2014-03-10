@@ -7,7 +7,7 @@ public class ExtractFieldParameterAndVariable {
         // Pass på at den er også intialisert i felt-deklarasjon, og ikke her!
         String makeMeField = "Fine things";
 
-        // 2. Dette skal bli metode-parameter i metoden doFineThings som heter 'message'.
+        // 2. Dette skal bli metod-parameter i metoden doFineThings som heter 'message'.
         // Pass på at extractor sender inn String ' happening' i Collaborator klasse.
         String makeMeMethodParameter = " happening";
 

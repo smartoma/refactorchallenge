@@ -10,7 +10,7 @@ public class MoveMethod {
 
     public int envyMethodForTotalPrice(Collaborator collaborator) {
 
-        // Disse 4 linjene skal bli en metode 'totalPrice()' i Collaborator klasse,
+        // Disse 4 linjene skal bli en metod 'totalPrice()' i Collaborator klasse,
         // og her skal man bare kalle: collaborator.totalPrice()
         // Du har ikke lov til å endre Collaborator manuelt !
         // Tips: Prøv å gjennomføre dette i 3 steg:
