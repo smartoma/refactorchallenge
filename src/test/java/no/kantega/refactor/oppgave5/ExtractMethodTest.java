@@ -11,12 +11,12 @@ import static org.powermock.reflect.internal.WhiteboxImpl.invokeMethod;
 
 public class ExtractMethodTest extends SuccessAwareTest {
 
-    private final String expectedBanner = "***************************\n" +
-                                          "***** This is banner ******\n" +
-                                          "***************************\n";
+    private final String expectedBanner = "***************************\r\n" +
+                                          "***** This is banner ******\r\n" +
+                                          "***************************\r\n";
 
-    private final String expectedDetails = "name: test\n" +
-                                           "amount: 16.0\n";
+    private final String expectedDetails = "name: test\r\n" +
+                                           "amount: 16.0\r\n";
 
     @Rule
     public final StandardOutputStreamLog log = new StandardOutputStreamLog();
